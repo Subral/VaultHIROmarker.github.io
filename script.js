@@ -58,14 +58,13 @@ window.onload = function () {
             patternUrl: 'https://rawcdn.githack.com/AR-js-org/AR.js/master/data/data/patt.hiro',
         });
 
-
     const loader = new GLTFLoader();
     loader.load(
-        'assets/models/Parrot.glb',
+        'pile_of_coins.glb',
         function (gltf) {
             const model = gltf.scene;
             model.scale.set(1, 1, 1);
-            model.position.set(2,2,2);
+            model.position.set(0,0,0);
             markerRoot.add(model);
         },
         function (error) {
@@ -74,25 +73,12 @@ window.onload = function () {
     );
 
       loader.load(
-        'assets/models/Flamingo.glb',
+        'pile_of_coins.glb',
         function (gltf) {
             const model1 = gltf.scene;
-            model1.scale.set(1, 1, 1);
-            model1.position.set(0,2,-3);
+            model1.scale.set(10, 10, 18);
+            model1.position.set(-2, 3.8, 3);
             markerRoot.add(model1);
-        },
-        function (error) {
-            console.error('An error happened', error);
-        }
-    );
-
-      loader.load(
-        'assets/models/Stork.glb',
-        function (gltf) {
-            const model2 = gltf.scene;
-            model2.scale.set(1, 1, 1);
-            model2.position.set(4, 2, -4);
-            markerRoot.add(model2);
         },
         function (error) {
             console.error('An error happened', error);
