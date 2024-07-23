@@ -99,6 +99,7 @@
 
 
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 window.onload = function () {
     const scene = new THREE.Scene();
@@ -119,6 +120,8 @@ window.onload = function () {
     directionalLight.position.set(2, 5, 5);
     directionalLight.castShadow = true;
     scene.add(directionalLight);
+
+    new OrbitControls(camera, renderer.domElement);
 
     const markerRoot = new THREE.Group();
     scene.add(markerRoot);
@@ -163,7 +166,7 @@ window.onload = function () {
     const loader = new GLTFLoader();
 
     loader.load(
-        'pile_of_coins.glb',
+        'bank-vault/source/Bankvault.glb',
         function (gltf) {
             const model = gltf.scene;
             model.scale.set(1, 1, 1);
@@ -183,7 +186,7 @@ window.onload = function () {
         'pile_of_coins.glb',
         function (gltf) {
             const model1 = gltf.scene;
-            model1.scale.set(10, 10, 18);
+            model1.scale.set(5, 5, 9);
             model1.position.set(-2, 3.8, 3);
             markerRoot.add(model1);
             model1.visible = false;
