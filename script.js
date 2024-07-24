@@ -1,5 +1,5 @@
-// import { GLTFLoader } from 'https://github.com/subral/VaultHIROmarker.github.io/blob/master/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
-// import { OrbitControls } from '/node_modules/three/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 window.onload = function () {
     const scene = new THREE.Scene();
@@ -22,7 +22,7 @@ window.onload = function () {
     directionalLight.castShadow = true;
     scene.add(directionalLight);
 
-    controls = new THREE.OrbitControls(camera);
+    controls = new OrbitControls(camera);
     controls.addEventListener('change', renderer);
 
 
@@ -66,7 +66,7 @@ window.onload = function () {
         patternUrl: 'https://rawcdn.githack.com/AR-js-org/AR.js/master/data/data/patt.hiro',
     });
 
-    const loader = new THREEx.GLTFLoader();
+    const loader = new GLTFLoader();
 
     loader.load(
         'bank-vault/source/Bankvault.glb',
