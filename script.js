@@ -1,7 +1,6 @@
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-window.onload = function () {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.set(0, 5, 15);
@@ -22,9 +21,7 @@ window.onload = function () {
     directionalLight.castShadow = true;
     scene.add(directionalLight);
 
-    controls = new OrbitControls(camera);
-    controls.addEventListener('change', renderer);
-
+    new OrbitControls(camera, renderer.domElement);
 
     const markerRoot = new THREE.Group();
     scene.add(markerRoot);
@@ -144,9 +141,7 @@ window.onload = function () {
             });
         }
 
-        controls.update();
         renderer.render(scene, camera);
     }
 
     animate();
-};
