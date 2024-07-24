@@ -1,4 +1,4 @@
-import { GLTFLoader } from '/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+import { GLTFLoader } from 'https://github.com/subral/VaultHIROmarker.github.io/blob/master/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
 import { OrbitControls } from '/node_modules/three/examples/jsm/controls/OrbitControls.js';
 
 window.onload = function () {
